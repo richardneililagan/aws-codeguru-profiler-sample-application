@@ -61,6 +61,12 @@ public class CreateOrderThread extends Thread{
 			}
 
 			SalesSystem.orders.put(orderDate, order);
+
+                        // :: check if order is entered and present
+                        if (SalesSystem.orders.containsKey(orderDate)) {
+                            System.out.println("New order verified: " + SalesSystem.orders.get(orderDate));
+                        }
+
 			id++;
 		} catch (IllegalArgumentException e){
             //e.printStackTrace();
