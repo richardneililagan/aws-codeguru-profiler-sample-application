@@ -61,6 +61,12 @@ public class CreateOrderThread extends Thread{
 			}
 
 			SalesSystem.orders.put(orderDate, order);
+
+                        // :: Check if OK
+                        if (SalesSystem.orders.containsKey(orderDate)) {
+                            System.out.println("New order: " + SalesSystem.orders.get(orderDate));
+                        }
+
 			id++;
 		} catch (IllegalArgumentException e){
             //e.printStackTrace();
